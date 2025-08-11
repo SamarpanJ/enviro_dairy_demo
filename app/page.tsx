@@ -5,11 +5,13 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
-import { Truck, Globe, Award, Leaf, Shield, Clock, Mail, Phone, MapPin, ChevronRight, Star, Users, TrendingUp, CheckCircle, ArrowRight, Zap, Target, BarChart3 } from 'lucide-react'
+import { Truck, Globe, Award, Leaf, Shield, Clock, Mail, Phone, MapPin, ChevronRight, Star, Users, TrendingUp, CheckCircle, ArrowRight, Zap, Target, BarChart3, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
 import Image from "next/image"
 import Link from "next/link"
 import { TrustedBrands } from "@/components/trusted-brands"
 import { ScrollCounter } from "@/components/scroll-counter"
+import { ScrollToTop } from "@/components/scroll-to-top"
+import { EnviroNavbar } from "@/components/enviro-navbar"
 import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/use-scroll-animation"
 
 export default function EnviroLanding() {
@@ -22,75 +24,48 @@ export default function EnviroLanding() {
   
   return (
     <div className="flex flex-col min-h-screen bg-white overflow-x-hidden">
-      {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-xl supports-[backdrop-filter]:bg-white/60">
-        <div className="container flex h-20 items-center justify-between px-4 md:px-6">
-          <div className="flex items-center space-x-3">
-            <div className="relative">
-              <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-green-600 to-green-700 flex items-center justify-center shadow-lg">
-                <Leaf className="h-5 w-5 text-white" />
-              </div>
-              <div className="absolute -top-1 -right-1 h-4 w-4 bg-green-400 rounded-full"></div>
-            </div>
-            <div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-black to-gray-700 bg-clip-text text-transparent">Enviro</span>
-              <div className="text-xs text-green-600 font-medium tracking-wider">DAIRY EXPORTS</div>
-            </div>
-          </div>
-          <nav className="hidden lg:flex items-center space-x-8">
-            <Link href="/" className="text-sm font-medium text-gray-700 hover:text-green-600 transition-all duration-300 relative group">
-              Home
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Link href="/contact" className="text-sm font-medium text-gray-700 hover:text-green-600 transition-all duration-300 relative group">
-              Contact
-              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-green-600 transition-all duration-300 group-hover:w-full"></span>
-            </Link>
-            <Button className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-6">
-              Get Premium Quote
-            </Button>
-          </nav>
-        </div>
-      </header>
+      <ScrollToTop />
+      <EnviroNavbar />
 
       <main className="flex-1">
         {/* Hero Section (refined) */}
-        <section className="relative w-full py-24 md:py-32 lg:py-36 overflow-hidden">
+        <section className="relative w-full pt-32 pb-24 md:pt-40 md:pb-32 lg:pt-44 lg:pb-36 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-green-100 to-green-200" />
           
           {/* Enhanced Dynamic Background Animations */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div 
-              className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-br from-green-200/40 to-emerald-300/30 rounded-full blur-sm" 
-              style={{animation: 'float-dynamic-1 12s ease-in-out infinite'}}
+              className="absolute top-10 left-10 w-72 h-72 bg-gradient-to-br from-green-200/40 to-emerald-300/30 organic-blob-1" 
+              style={{animation: 'morph-float-1 12s ease-in-out infinite'}}
             ></div>
             <div 
-              className="absolute top-32 right-20 w-96 h-96 bg-gradient-to-bl from-emerald-300/30 to-green-400/20 rounded-full blur-sm" 
-              style={{animation: 'float-dynamic-2 15s ease-in-out infinite'}}
+              className="absolute top-32 right-20 w-96 h-96 bg-gradient-to-bl from-emerald-300/30 to-green-400/20 organic-blob-2" 
+              style={{animation: 'morph-float-2 15s ease-in-out infinite'}}
             ></div>
             <div 
-              className="absolute bottom-20 left-1/4 w-64 h-64 bg-gradient-to-tr from-green-300/35 to-emerald-200/25 rounded-full blur-sm" 
-              style={{animation: 'float-dynamic-3 10s ease-in-out infinite'}}
+              className="absolute bottom-20 left-1/4 w-64 h-64 bg-gradient-to-tr from-green-300/35 to-emerald-200/25 organic-blob-3" 
+              style={{animation: 'morph-float-3 10s ease-in-out infinite'}}
             ></div>
             <div 
-              className="absolute top-1/2 right-1/3 w-48 h-48 bg-gradient-to-br from-emerald-200/40 to-green-300/30 rounded-full blur-sm" 
-              style={{animation: 'float-dynamic-4 18s ease-in-out infinite'}}
+              className="absolute top-1/2 right-1/3 w-48 h-48 bg-gradient-to-br from-emerald-200/40 to-green-300/30 organic-blob-4" 
+              style={{animation: 'morph-float-4 18s ease-in-out infinite'}}
             ></div>
             <div 
-              className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-tl from-green-100/50 to-emerald-100/35 rounded-full blur-sm" 
-              style={{animation: 'float-dynamic-5 13s ease-in-out infinite'}}
+              className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-tl from-green-100/50 to-emerald-100/35 organic-blob-5" 
+              style={{animation: 'morph-float-5 13s ease-in-out infinite'}}
             ></div>
             <div 
-              className="absolute top-20 left-1/2 w-56 h-56 bg-gradient-to-bl from-emerald-400/25 to-green-500/15 rounded-full blur-sm" 
-              style={{animation: 'float-dynamic-6 16s ease-in-out infinite'}}
+              className="absolute top-20 left-1/2 w-56 h-56 bg-gradient-to-bl from-emerald-400/25 to-green-500/15 organic-blob-6" 
+              style={{animation: 'morph-float-6 16s ease-in-out infinite'}}
+            ></div>
+
+            <div 
+              className="absolute top-3/4 left-1/6 w-40 h-40 bg-gradient-to-r from-green-200/30 to-emerald-300/20 organic-blob-7" 
+              style={{animation: 'morph-float-1 14s ease-in-out infinite reverse'}}
             ></div>
             <div 
-              className="absolute top-3/4 left-1/6 w-40 h-40 bg-gradient-to-r from-green-200/30 to-emerald-300/20 rounded-full blur-sm" 
-              style={{animation: 'float-dynamic-1 14s ease-in-out infinite reverse'}}
-            ></div>
-            <div 
-              className="absolute top-1/4 right-1/6 w-60 h-60 bg-gradient-to-l from-emerald-400/20 to-green-200/25 rounded-full blur-sm" 
-              style={{animation: 'float-dynamic-3 11s ease-in-out infinite reverse'}}
+              className="absolute top-1/4 right-1/6 w-60 h-60 bg-gradient-to-l from-emerald-400/20 to-green-200/25 organic-blob-8" 
+              style={{animation: 'morph-float-3 11s ease-in-out infinite reverse'}}
             ></div>
           </div>
 
@@ -106,13 +81,13 @@ export default function EnviroLanding() {
                   team trusted by importers across 75+ countries.
                 </p>
                 <div className="mt-8 flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" asChild className="h-14 px-8 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white shadow-xl hover:shadow-2xl transition-all group">
+                  <Button size="lg" asChild className="h-14 px-8 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 transform group">
                     <Link href="/contact">
                       Request Proposal
                       <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                     </Link>
                   </Button>
-                  <Button size="lg" variant="outline" asChild className="h-14 px-8 border-2 border-gray-300 text-gray-700 hover:border-green-600 hover:text-green-700">
+                  <Button size="lg" variant="outline" asChild className="h-14 px-8 border-2 border-gray-300 text-gray-700 hover:border-green-600 hover:text-green-700 hover:shadow-lg hover:scale-105 transform transition-all duration-300">
                     <Link href="#products">
                       Browse Products
                     </Link>
@@ -120,14 +95,14 @@ export default function EnviroLanding() {
                 </div>
                 <div className="mt-6 text-sm text-gray-500">Response within 24 hours</div>
               </div>
-              <div className="relative">
+              <div className="relative overflow-hidden rounded-3xl">
                 <Image
                   src="/premium-dairy-hero.png"
                   alt="Premium dairy products"
                   width={760}
                   height={640}
                   priority
-                  className="rounded-3xl shadow-2xl ring-1 ring-black/5"
+                  className="rounded-3xl shadow-2xl ring-1 ring-black/5 transition-transform duration-500 hover:scale-110"
                 />
               </div>
             </div>
@@ -420,13 +395,13 @@ export default function EnviroLanding() {
                   </div>
                 </div>
               </div>
-              <div className="relative">
+              <div className="relative overflow-hidden rounded-3xl">
                 <Image
                   src="/sustainability-showcase.png"
                   alt="Sustainable dairy operations"
                   width={600}
                   height={600}
-                  className="rounded-3xl shadow-2xl"
+                  className="rounded-3xl shadow-2xl transition-transform duration-500 hover:scale-110"
                 />
                 <div className="absolute -top-8 -left-8 bg-gradient-to-br from-white to-green-50 p-6 rounded-2xl shadow-2xl border border-green-100">
                   <div className="text-center">
@@ -458,71 +433,86 @@ export default function EnviroLanding() {
             </div>
 
             {/* Row 1 */}
-            <div className="relative mask-fade-x overflow-hidden">
-              <div className="marquee flex gap-4 md:gap-6 will-change-transform">
-                {[1,2,3,4,5,6].map((i) => (
-                  <Card key={`t1-${i}`} className="border-0 shadow-md min-w-[280px] sm:min-w-[320px] md:min-w-[360px] flex-shrink-0">
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="h-10 w-10 rounded-full bg-green-100 text-green-700 grid place-items-center font-semibold" aria-hidden="true"></div>
-                        <div>
-                          <div className="font-semibold text-black">Senior Buyer, GlobalMart</div>
-                          <div className="text-xs text-gray-500">Dubai, UAE</div>
+            <div className="relative overflow-hidden">
+              <div className="flex animate-marquee">
+                <div className="flex gap-3 md:gap-4 flex-shrink-0">
+                  {[1,2,3,4,5,6].map((i) => (
+                    <Card key={`t1-${i}`} className="border-0 shadow-md w-[260px] flex-shrink-0">
+                      <CardContent className="p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="min-h-10 min-w-10 h-10 w-10 rounded-full bg-green-100 text-green-700 flex items-center justify-center font-semibold text-sm flex-shrink-0">
+                            GM
+                          </div>
+                          <div>
+                            <div className="font-semibold text-black">Senior Buyer, GlobalMart</div>
+                            <div className="text-xs text-gray-500">Dubai, UAE</div>
+                          </div>
                         </div>
-                      </div>
-                      <p className="text-gray-600">“On‑time deliveries and flawless quality. Enviro is our most reliable dairy partner.”</p>
-                    </CardContent>
-                  </Card>
-                ))}
-                {/* Duplicate for seamless loop */}
-                {[1,2,3,4,5,6].map((i) => (
-                  <Card key={`t1b-${i}`} className="border-0 shadow-md min-w-[280px] sm:min-w-[320px] md:min-w-[360px] flex-shrink-0">
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="h-10 w-10 rounded-full bg-green-100 text-green-700 grid place-items-center font-semibold" aria-hidden="true"></div>
-                        <div>
-                          <div className="font-semibold text-black">Senior Buyer, GlobalMart</div>
-                          <div className="text-xs text-gray-500">Dubai, UAE</div>
+                        <p className="text-gray-600">"On‑time deliveries and flawless quality. Enviro is our most reliable dairy partner."</p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+                <div className="flex gap-3 md:gap-4 flex-shrink-0 ml-3 md:ml-4">
+                  {[1,2,3,4,5,6].map((i) => (
+                    <Card key={`t1b-${i}`} className="border-0 shadow-md w-[260px] flex-shrink-0" aria-hidden="true">
+                      <CardContent className="p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="min-h-10 min-w-10 h-10 w-10 rounded-full bg-green-100 text-green-700 flex items-center justify-center font-semibold text-sm flex-shrink-0">
+                            GM
+                          </div>
+                          <div>
+                            <div className="font-semibold text-black">Senior Buyer, GlobalMart</div>
+                            <div className="text-xs text-gray-500">Dubai, UAE</div>
+                          </div>
                         </div>
-                      </div>
-                      <p className="text-gray-600">“On‑time deliveries and flawless quality. Enviro is our most reliable dairy partner.”</p>
-                    </CardContent>
-                  </Card>
-                ))}
+                        <p className="text-gray-600">"On‑time deliveries and flawless quality. Enviro is our most reliable dairy partner."</p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
               </div>
             </div>
 
             {/* Row 2 reverse */}
-            <div className="relative mask-fade-x mt-6 overflow-hidden">
-              <div className="marquee-reverse flex gap-4 md:gap-6 will-change-transform">
-                {[1,2,3,4,5,6].map((i) => (
-                  <Card key={`t2-${i}`} className="border-0 shadow-md min-w-[280px] sm:min-w-[320px] md:min-w-[360px] flex-shrink-0">
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="h-10 w-10 rounded-full bg-green-100 text-green-700 grid place-items-center font-semibold" aria-hidden="true"></div>
-                        <div>
-                          <div className="font-semibold text-black">Procurement Lead, OceanTrade</div>
-                          <div className="text-xs text-gray-500">Singapore</div>
+            <div className="relative mt-6 overflow-hidden">
+              <div className="flex animate-marquee-reverse">
+                <div className="flex gap-3 md:gap-4 flex-shrink-0">
+                  {[1,2,3,4,5,6].map((i) => (
+                    <Card key={`t2-${i}`} className="border-0 shadow-md w-[260px] flex-shrink-0">
+                      <CardContent className="p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="min-h-10 min-w-10 h-10 w-10 rounded-full bg-green-100 text-green-700 flex items-center justify-center font-semibold text-sm flex-shrink-0">
+                            OT
+                          </div>
+                          <div>
+                            <div className="font-semibold text-black">Procurement Lead, OceanTrade</div>
+                            <div className="text-xs text-gray-500">Singapore</div>
+                          </div>
                         </div>
-                      </div>
-                      <p className="text-gray-600">“Exceptional documentation and certifications. Compliance is always seamless.”</p>
-                    </CardContent>
-                  </Card>
-                ))}
-                {[1,2,3,4,5,6].map((i) => (
-                  <Card key={`t2b-${i}`} className="border-0 shadow-md min-w-[280px] sm:min-w-[320px] md:min-w-[360px] flex-shrink-0">
-                    <CardContent className="p-6">
-                      <div className="flex items-center gap-3 mb-3">
-                        <div className="h-10 w-10 rounded-full bg-green-100 text-green-700 grid place-items-center font-semibold" aria-hidden="true"></div>
-                        <div>
-                          <div className="font-semibold text-black">Procurement Lead, OceanTrade</div>
-                          <div className="text-xs text-gray-500">Singapore</div>
+                        <p className="text-gray-600">"Exceptional documentation and certifications. Compliance is always seamless."</p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+                <div className="flex gap-3 md:gap-4 flex-shrink-0 ml-3 md:ml-4">
+                  {[1,2,3,4,5,6].map((i) => (
+                    <Card key={`t2b-${i}`} className="border-0 shadow-md w-[260px] flex-shrink-0" aria-hidden="true">
+                      <CardContent className="p-5">
+                        <div className="flex items-center gap-3 mb-3">
+                          <div className="min-h-10 min-w-10 h-10 w-10 rounded-full bg-green-100 text-green-700 flex items-center justify-center font-semibold text-sm flex-shrink-0">
+                            OT
+                          </div>
+                          <div>
+                            <div className="font-semibold text-black">Procurement Lead, OceanTrade</div>
+                            <div className="text-xs text-gray-500">Singapore</div>
+                          </div>
                         </div>
-                      </div>
-                      <p className="text-gray-600">“Exceptional documentation and certifications. Compliance is always seamless.”</p>
-                    </CardContent>
-                  </Card>
-                ))}
+                        <p className="text-gray-600">"Exceptional documentation and certifications. Compliance is always seamless."</p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -552,6 +542,30 @@ export default function EnviroLanding() {
                 Premium dairy exports connecting sustainable farms to global markets with 
                 uncompromising quality and environmental responsibility since 1995.
               </p>
+              
+              {/* Social Media Links */}
+              <div className="flex space-x-4 pt-4">
+                <Link href="/" className="group">
+                  <div className="h-10 w-10 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center hover:bg-green-600 hover:border-green-500 transition-all duration-300 group-hover:scale-110">
+                    <Facebook className="h-4 w-4 text-gray-300 group-hover:text-white transition-colors" />
+                  </div>
+                </Link>
+                <Link href="/" className="group">
+                  <div className="h-10 w-10 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center hover:bg-green-600 hover:border-green-500 transition-all duration-300 group-hover:scale-110">
+                    <Twitter className="h-4 w-4 text-gray-300 group-hover:text-white transition-colors" />
+                  </div>
+                </Link>
+                <Link href="/" className="group">
+                  <div className="h-10 w-10 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center hover:bg-green-600 hover:border-green-500 transition-all duration-300 group-hover:scale-110">
+                    <Instagram className="h-4 w-4 text-gray-300 group-hover:text-white transition-colors" />
+                  </div>
+                </Link>
+                <Link href="/" className="group">
+                  <div className="h-10 w-10 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center hover:bg-green-600 hover:border-green-500 transition-all duration-300 group-hover:scale-110">
+                    <Linkedin className="h-4 w-4 text-gray-300 group-hover:text-white transition-colors" />
+                  </div>
+                </Link>
+              </div>
             </div>
 
             {/* Quick Links & Contact - Right */}
@@ -619,3 +633,4 @@ export default function EnviroLanding() {
     </div>
   )
 }
+

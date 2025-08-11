@@ -9,10 +9,13 @@ import { Badge } from "@/components/ui/badge"
 import { Separator } from "@/components/ui/separator"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Checkbox } from "@/components/ui/checkbox"
-import { Mail, Phone, MapPin, Clock, Globe, Users, Award, Leaf, ArrowRight, CheckCircle, Building, Truck, Shield } from 'lucide-react'
+import { Mail, Phone, MapPin, Clock, Globe, Users, Award, Leaf, ArrowRight, CheckCircle, Building, Truck, Shield, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react'
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
+import { ScrollToTop } from "@/components/scroll-to-top"
+import { InteractiveMap } from "@/components/interactive-map"
+import { EnviroNavbar } from "@/components/enviro-navbar"
 import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/use-scroll-animation"
 
 export default function ContactPage() {
@@ -43,83 +46,37 @@ export default function ContactPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      {/* Header */}
-      <header className="sticky top-0 z-50 w-full border-b bg-white/80 backdrop-blur-xl supports-[backdrop-filter]:bg-white/60">
-        <div className="container flex h-20 items-center justify-between px-4 md:px-6">
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="relative">
-              <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-green-600 to-green-700 flex items-center justify-center shadow-lg">
-                <Leaf className="h-5 w-5 text-white" />
-              </div>
-              <div className="absolute -top-1 -right-1 h-4 w-4 bg-green-400 rounded-full"></div>
-            </div>
-            <div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-black to-gray-700 bg-clip-text text-transparent">Enviro</span>
-              <div className="text-xs text-green-600 font-medium tracking-wider">DAIRY EXPORTS</div>
-            </div>
-          </Link>
-          <nav className="hidden lg:flex items-center space-x-8">
-            <Link href="/" className="text-sm font-medium text-gray-700 hover:text-green-600 transition-all duration-300">
-              Home
-            </Link>
-            <Link href="/contact" className="text-sm font-medium text-green-600">
-              Contact
-            </Link>
-            <Button className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-6">
-              Get Premium Quote
-            </Button>
-          </nav>
-        </div>
-      </header>
+      <ScrollToTop />
+      <EnviroNavbar />
 
       <main className="flex-1">
         {/* Hero Section - Simple Premium Design */}
-        <section className="relative w-full py-20 md:py-32 overflow-hidden">
+        <section className="relative w-full pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
           {/* Background */}
           <div className="absolute inset-0 bg-gradient-to-br from-green-50 via-emerald-50 to-white" />
           <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[0.02]" />
           
-          {/* Moving and Scaling Background Animations */}
-          <div className="absolute inset-0 overflow-hidden">
+          {/* Premium Organic Blob Animations */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div 
-              className="absolute w-72 h-72 bg-green-200/25 rounded-full" 
-              style={{
-                animation: 'float1 8s ease-in-out infinite, scale1 6s ease-in-out infinite',
-                top: '10%',
-                left: '5%'
-              }}
+              className="absolute top-16 left-12 w-80 h-80 bg-gradient-to-br from-emerald-200/30 to-green-300/20 organic-blob-1 backdrop-blur-sm" 
+              style={{animation: 'morph-float-1 16s ease-in-out infinite'}}
             ></div>
             <div 
-              className="absolute w-96 h-96 bg-emerald-300/20 rounded-full" 
-              style={{
-                animation: 'float2 12s ease-in-out infinite, scale2 8s ease-in-out infinite',
-                top: '20%',
-                right: '10%'
-              }}
+              className="absolute top-32 right-16 w-72 h-72 bg-gradient-to-bl from-green-300/25 to-emerald-400/18 organic-blob-2 backdrop-blur-sm" 
+              style={{animation: 'morph-float-2 20s ease-in-out infinite'}}
             ></div>
             <div 
-              className="absolute w-64 h-64 bg-green-300/30 rounded-full" 
-              style={{
-                animation: 'float3 10s ease-in-out infinite, scale3 7s ease-in-out infinite',
-                bottom: '15%',
-                left: '20%'
-              }}
+              className="absolute bottom-20 left-1/4 w-64 h-64 bg-gradient-to-tr from-green-200/35 to-emerald-200/22 organic-blob-3 backdrop-blur-sm" 
+              style={{animation: 'morph-float-3 14s ease-in-out infinite'}}
             ></div>
             <div 
-              className="absolute w-80 h-80 bg-emerald-200/25 rounded-full" 
-              style={{
-                animation: 'float4 14s ease-in-out infinite, scale4 9s ease-in-out infinite',
-                top: '40%',
-                right: '25%'
-              }}
+              className="absolute top-1/2 right-1/3 w-56 h-56 bg-gradient-to-br from-emerald-300/28 to-green-400/16 organic-blob-4 backdrop-blur-sm" 
+              style={{animation: 'morph-float-4 22s ease-in-out infinite'}}
             ></div>
             <div 
-              className="absolute w-56 h-56 bg-green-100/35 rounded-full" 
-              style={{
-                animation: 'float5 9s ease-in-out infinite, scale5 5s ease-in-out infinite',
-                bottom: '10%',
-                right: '15%'
-              }}
+              className="absolute bottom-16 right-20 w-88 h-88 bg-gradient-to-tl from-green-100/40 to-emerald-100/25 organic-blob-5 backdrop-blur-sm" 
+              style={{animation: 'morph-float-5 18s ease-in-out infinite'}}
             ></div>
           </div>
 
@@ -156,56 +113,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          {/* CSS Animations */}
-          <style jsx>{`
-            @keyframes float1 {
-              0%, 100% { transform: translate(0, 0); }
-              25% { transform: translate(30px, -20px); }
-              50% { transform: translate(-20px, -40px); }
-              75% { transform: translate(-30px, 20px); }
-            }
-            @keyframes float2 {
-              0%, 100% { transform: translate(0, 0); }
-              33% { transform: translate(-40px, 30px); }
-              66% { transform: translate(20px, -25px); }
-            }
-            @keyframes float3 {
-              0%, 100% { transform: translate(0, 0); }
-              20% { transform: translate(25px, 35px); }
-              40% { transform: translate(-30px, -20px); }
-              60% { transform: translate(35px, -30px); }
-              80% { transform: translate(-25px, 25px); }
-            }
-            @keyframes float4 {
-              0%, 100% { transform: translate(0, 0); }
-              50% { transform: translate(-35px, 40px); }
-            }
-            @keyframes float5 {
-              0%, 100% { transform: translate(0, 0); }
-              30% { transform: translate(40px, -30px); }
-              70% { transform: translate(-20px, 35px); }
-            }
-            @keyframes scale1 {
-              0%, 100% { transform: scale(1); }
-              50% { transform: scale(1.2); }
-            }
-            @keyframes scale2 {
-              0%, 100% { transform: scale(1); }
-              50% { transform: scale(0.8); }
-            }
-            @keyframes scale3 {
-              0%, 100% { transform: scale(1); }
-              50% { transform: scale(1.3); }
-            }
-            @keyframes scale4 {
-              0%, 100% { transform: scale(1); }
-              50% { transform: scale(0.9); }
-            }
-            @keyframes scale5 {
-              0%, 100% { transform: scale(1); }
-              50% { transform: scale(1.1); }
-            }
-          `}</style>
+
         </section>
 
         {/* Contact Form & Info Section */}
@@ -556,6 +464,9 @@ export default function ContactPage() {
           </div>
         </section>
 
+        {/* Interactive Map Section */}
+        <InteractiveMap />
+
         {/* FAQ Section */}
         <section className="w-full py-20 bg-gradient-to-b from-white via-slate-50/30 to-green-50/25 relative overflow-hidden">
           {/* Premium background elements */}
@@ -642,6 +553,30 @@ export default function ContactPage() {
                 Premium dairy exports connecting sustainable farms to global markets with 
                 uncompromising quality and environmental responsibility since 1995.
               </p>
+              
+              {/* Social Media Links */}
+              <div className="flex space-x-4 pt-4">
+                <Link href="/" className="group">
+                  <div className="h-10 w-10 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center hover:bg-green-600 hover:border-green-500 transition-all duration-300 group-hover:scale-110">
+                    <Facebook className="h-4 w-4 text-gray-300 group-hover:text-white transition-colors" />
+                  </div>
+                </Link>
+                <Link href="/" className="group">
+                  <div className="h-10 w-10 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center hover:bg-green-600 hover:border-green-500 transition-all duration-300 group-hover:scale-110">
+                    <Twitter className="h-4 w-4 text-gray-300 group-hover:text-white transition-colors" />
+                  </div>
+                </Link>
+                <Link href="/" className="group">
+                  <div className="h-10 w-10 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center hover:bg-green-600 hover:border-green-500 transition-all duration-300 group-hover:scale-110">
+                    <Instagram className="h-4 w-4 text-gray-300 group-hover:text-white transition-colors" />
+                  </div>
+                </Link>
+                <Link href="/" className="group">
+                  <div className="h-10 w-10 rounded-full bg-gray-800 border border-gray-700 flex items-center justify-center hover:bg-green-600 hover:border-green-500 transition-all duration-300 group-hover:scale-110">
+                    <Linkedin className="h-4 w-4 text-gray-300 group-hover:text-white transition-colors" />
+                  </div>
+                </Link>
+              </div>
             </div>
 
             {/* Quick Links & Contact - Right */}

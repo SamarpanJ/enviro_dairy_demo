@@ -32,7 +32,13 @@ html {
         <div className="pointer-events-none fixed inset-0 -z-20 bg-gradient-to-b from-white via-green-50/20 to-white" />
         <div className="pointer-events-none fixed inset-0 -z-10 bg-grid [mask-image:radial-gradient(ellipse_at_center,black,transparent_70%)]" />
 
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+        <ThemeProvider 
+          attribute="class" 
+          defaultTheme="light" 
+          enableSystem={false}
+          disableTransitionOnChange
+          forcedTheme="light"
+        >
           {children}
         </ThemeProvider>
       </body>

@@ -20,24 +20,30 @@ function BrandWordmark(props: { name: string; className?: string }) {
   return (
     <div
       className={cn(
-        'min-w-[160px] h-12 px-6 grid place-items-center select-none group',
-        'text-gray-500 hover:text-green-700 transition-all duration-300',
-        'font-semibold tracking-wide cursor-pointer',
-        'bg-white/50 hover:bg-white/80 backdrop-blur-sm',
-        'rounded-xl border border-gray-100/50 hover:border-green-200',
-        'shadow-sm hover:shadow-md transform hover:scale-105',
+        'min-w-[180px] h-14 px-7 grid place-items-center select-none group cursor-pointer',
+        'text-slate-600 hover:text-emerald-700 transition-all duration-500 ease-out',
+        'font-semibold tracking-wide text-base',
+        'bg-white/70 hover:bg-white/95 backdrop-blur-md',
+        'rounded-2xl border border-slate-200/40 hover:border-emerald-200/60',
+        'shadow-lg shadow-slate-200/20 hover:shadow-xl hover:shadow-emerald-200/25',
+        'transform hover:scale-[1.02] hover:-translate-y-0.5',
+        'relative overflow-hidden',
+        'before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent',
+        'before:translate-x-[-200%] hover:before:translate-x-[200%] before:transition-transform before:duration-700',
         props.className,
       )}
     >
-      <span className="group-hover:font-bold transition-all duration-300">{props.name}</span>
+      <span className="group-hover:font-bold transition-all duration-300 relative z-10">
+        {props.name}
+      </span>
     </div>
   )
 }
 
 function MarqueeRow({ items }: { items: Brand[] }) {
   return (
-    <div className="relative mask-fade-x">
-      <div className={cn('flex gap-6 w-max will-change-transform marquee')} style={{ animationDuration: '40s' }}>
+    <div className="relative mask-fade-x overflow-hidden">
+      <div className={cn('flex gap-8 w-max will-change-transform marquee')} style={{ animationDuration: '45s' }}>
         {items.map((b) => (
           <BrandWordmark key={`a-${b.name}`} name={b.name} />
         ))}
@@ -51,15 +57,19 @@ function MarqueeRow({ items }: { items: Brand[] }) {
 
 export function TrustedBrands() {
   return (
-    <section className="w-full py-16 bg-gradient-to-br from-gray-50 via-white to-green-50/30 border-y border-gray-100">
+    <section className="w-full py-20 bg-gradient-to-br from-slate-50/50 via-white to-emerald-50/20 border-y border-slate-200/30">
       <div className="container px-4 md:px-6">
-        <div className="text-center mb-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-green-100/60 to-emerald-100/60 border border-green-200/40 mb-4">
-            <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            <span className="text-sm font-semibold text-green-800">Global Partnership</span>
+        <div className="text-center mb-14">
+          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-50/80 to-teal-50/80 border border-emerald-200/30 shadow-sm backdrop-blur-sm mb-6">
+            <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-sm" />
+            <span className="text-sm font-semibold text-emerald-800 tracking-wide">Global Partnership</span>
           </div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">Trusted by Leading Global Brands</h2>
-          <p className="text-gray-600 max-w-md mx-auto">Delivering excellence to dairy industry leaders worldwide</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
+            Trusted by Leading Global Brands
+          </h2>
+          <p className="text-slate-600 text-lg max-w-xl mx-auto leading-relaxed">
+            Delivering excellence to dairy industry leaders worldwide through premium quality and innovation
+          </p>
         </div>
 
         <MarqueeRow items={BRANDS} />

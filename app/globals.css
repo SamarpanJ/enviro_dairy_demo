@@ -50,9 +50,23 @@
   .marquee-reverse {
     animation: marquee-x 35s linear infinite reverse;
   }
+  .animate-marquee {
+    animation: scroll-left 30s linear infinite;
+  }
+  .animate-marquee-reverse {
+    animation: scroll-right 30s linear infinite;
+  }
   @keyframes marquee-x {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
+  }
+  @keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+  }
+  @keyframes scroll-right {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
   }
 
   .animate-blob {
@@ -82,49 +96,153 @@
     }
   }
 
-  /* Enhanced ball animations for hero section */
-  @keyframes float-dynamic-1 {
-    0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
-    25% { transform: translate(40px, -30px) scale(1.2) rotate(90deg); }
-    50% { transform: translate(-25px, -50px) scale(0.8) rotate(180deg); }
-    75% { transform: translate(-40px, 25px) scale(1.1) rotate(270deg); }
+  /* Organic Blob Shapes - Deformed, non-circular */
+  .organic-blob-1 {
+    border-radius: 73% 27% 35% 65% / 42% 58% 42% 58%;
+  }
+  .organic-blob-2 {
+    border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+  }
+  .organic-blob-3 {
+    border-radius: 48% 52% 30% 70% / 36% 64% 36% 64%;
+  }
+  .organic-blob-4 {
+    border-radius: 61% 39% 29% 71% / 44% 78% 22% 56%;
+  }
+  .organic-blob-5 {
+    border-radius: 29% 71% 75% 25% / 52% 35% 65% 48%;
+  }
+  .organic-blob-6 {
+    border-radius: 67% 33% 54% 46% / 29% 71% 29% 71%;
+  }
+  .organic-blob-7 {
+    border-radius: 45% 55% 71% 29% / 68% 32% 68% 32%;
+  }
+  .organic-blob-8 {
+    border-radius: 33% 67% 42% 58% / 55% 45% 73% 27%;
   }
 
-  @keyframes float-dynamic-2 {
-    0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
-    20% { transform: translate(-50px, 40px) scale(1.3) rotate(72deg); }
-    40% { transform: translate(30px, -20px) scale(0.7) rotate(144deg); }
-    60% { transform: translate(45px, 35px) scale(1.1) rotate(216deg); }
-    80% { transform: translate(-30px, -40px) scale(0.9) rotate(288deg); }
+  /* Morphing Float Animations - Movement + Shape Changes */
+  @keyframes morph-float-1 {
+    0%, 100% { 
+      transform: translate(0, 0) scale(1) rotate(0deg); 
+      border-radius: 73% 27% 35% 65% / 42% 58% 42% 58%;
+    }
+    25% { 
+      transform: translate(40px, -30px) scale(1.1) rotate(90deg); 
+      border-radius: 38% 62% 55% 45% / 67% 33% 52% 48%;
+    }
+    50% { 
+      transform: translate(-25px, -50px) scale(0.9) rotate(180deg); 
+      border-radius: 65% 35% 29% 71% / 44% 56% 37% 63%;
+    }
+    75% { 
+      transform: translate(-40px, 25px) scale(1.05) rotate(270deg); 
+      border-radius: 52% 48% 71% 29% / 58% 42% 68% 32%;
+    }
   }
 
-  @keyframes float-dynamic-3 {
-    0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
-    33% { transform: translate(35px, 45px) scale(1.4) rotate(120deg); }
-    66% { transform: translate(-40px, -25px) scale(0.6) rotate(240deg); }
+  @keyframes morph-float-2 {
+    0%, 100% { 
+      transform: translate(0, 0) scale(1) rotate(0deg); 
+      border-radius: 38% 62% 63% 37% / 70% 33% 67% 30%;
+    }
+    20% { 
+      transform: translate(-50px, 40px) scale(1.2) rotate(72deg); 
+      border-radius: 67% 33% 45% 55% / 29% 71% 52% 48%;
+    }
+    40% { 
+      transform: translate(30px, -20px) scale(0.8) rotate(144deg); 
+      border-radius: 29% 71% 68% 32% / 55% 45% 73% 27%;
+    }
+    60% { 
+      transform: translate(45px, 35px) scale(1.15) rotate(216deg); 
+      border-radius: 73% 27% 35% 65% / 42% 58% 42% 58%;
+    }
+    80% { 
+      transform: translate(-30px, -40px) scale(0.85) rotate(288deg); 
+      border-radius: 48% 52% 30% 70% / 64% 36% 67% 33%;
+    }
   }
 
-  @keyframes float-dynamic-4 {
-    0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
-    16% { transform: translate(-30px, -35px) scale(1.2) rotate(60deg); }
-    32% { transform: translate(50px, 20px) scale(0.8) rotate(120deg); }
-    48% { transform: translate(25px, 45px) scale(1.3) rotate(180deg); }
-    64% { transform: translate(-45px, 30px) scale(0.7) rotate(240deg); }
-    80% { transform: translate(35px, -40px) scale(1.1) rotate(300deg); }
+  @keyframes morph-float-3 {
+    0%, 100% { 
+      transform: translate(0, 0) scale(1) rotate(0deg); 
+      border-radius: 48% 52% 30% 70% / 36% 64% 36% 64%;
+    }
+    33% { 
+      transform: translate(35px, 45px) scale(1.25) rotate(120deg); 
+      border-radius: 61% 39% 54% 46% / 78% 22% 71% 29%;
+    }
+    66% { 
+      transform: translate(-40px, -25px) scale(0.75) rotate(240deg); 
+      border-radius: 29% 71% 75% 25% / 52% 48% 65% 35%;
+    }
   }
 
-  @keyframes float-dynamic-5 {
-    0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
-    25% { transform: translate(60px, -20px) scale(0.9) rotate(90deg); }
-    50% { transform: translate(-35px, 50px) scale(1.2) rotate(180deg); }
-    75% { transform: translate(20px, -45px) scale(0.8) rotate(270deg); }
+  @keyframes morph-float-4 {
+    0%, 100% { 
+      transform: translate(0, 0) scale(1) rotate(0deg); 
+      border-radius: 61% 39% 29% 71% / 44% 78% 22% 56%;
+    }
+    16% { 
+      transform: translate(-30px, -35px) scale(1.18) rotate(60deg); 
+      border-radius: 33% 67% 71% 29% / 68% 32% 45% 55%;
+    }
+    32% { 
+      transform: translate(50px, 20px) scale(0.82) rotate(120deg); 
+      border-radius: 67% 33% 42% 58% / 29% 71% 73% 27%;
+    }
+    48% { 
+      transform: translate(25px, 45px) scale(1.3) rotate(180deg); 
+      border-radius: 45% 55% 63% 37% / 70% 30% 52% 48%;
+    }
+    64% { 
+      transform: translate(-45px, 30px) scale(0.7) rotate(240deg); 
+      border-radius: 38% 62% 35% 65% / 58% 42% 67% 33%;
+    }
+    80% { 
+      transform: translate(35px, -40px) scale(1.12) rotate(300deg); 
+      border-radius: 73% 27% 30% 70% / 36% 64% 42% 58%;
+    }
   }
 
-  @keyframes float-dynamic-6 {
-    0%, 100% { transform: translate(0, 0) scale(1) rotate(0deg); }
-    30% { transform: translate(-25px, 35px) scale(1.1) rotate(108deg); }
-    60% { transform: translate(40px, -30px) scale(0.9) rotate(216deg); }
-    90% { transform: translate(-15px, -20px) scale(1.3) rotate(324deg); }
+  @keyframes morph-float-5 {
+    0%, 100% { 
+      transform: translate(0, 0) scale(1) rotate(0deg); 
+      border-radius: 29% 71% 75% 25% / 52% 35% 65% 48%;
+    }
+    25% { 
+      transform: translate(60px, -20px) scale(0.9) rotate(90deg); 
+      border-radius: 67% 33% 46% 54% / 29% 71% 44% 56%;
+    }
+    50% { 
+      transform: translate(-35px, 50px) scale(1.15) rotate(180deg); 
+      border-radius: 48% 52% 71% 29% / 68% 32% 35% 65%;
+    }
+    75% { 
+      transform: translate(20px, -45px) scale(0.95) rotate(270deg); 
+      border-radius: 61% 39% 37% 63% / 70% 30% 58% 42%;
+    }
+  }
+
+  @keyframes morph-float-6 {
+    0%, 100% { 
+      transform: translate(0, 0) scale(1) rotate(0deg); 
+      border-radius: 67% 33% 54% 46% / 29% 71% 29% 71%;
+    }
+    30% { 
+      transform: translate(-25px, 35px) scale(1.1) rotate(108deg); 
+      border-radius: 33% 67% 75% 25% / 52% 48% 65% 35%;
+    }
+    60% { 
+      transform: translate(40px, -30px) scale(0.9) rotate(216deg); 
+      border-radius: 45% 55% 29% 71% / 68% 32% 73% 27%;
+    }
+    90% { 
+      transform: translate(-15px, -20px) scale(1.25) rotate(324deg); 
+      border-radius: 38% 62% 63% 37% / 58% 42% 30% 70%;
+    }
   }
 
   /* Scroll reveal animations */

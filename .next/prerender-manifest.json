@@ -1,30 +1,6 @@
 {
   "version": 4,
   "routes": {
-    "/contact": {
-      "experimentalBypassFor": [
-        {
-          "type": "header",
-          "key": "Next-Action"
-        },
-        {
-          "type": "header",
-          "key": "content-type",
-          "value": "multipart/form-data;.*"
-        }
-      ],
-      "initialRevalidateSeconds": false,
-      "srcRoute": "/contact",
-      "dataRoute": "/contact.rsc",
-      "allowHeader": [
-        "host",
-        "x-matched-path",
-        "x-prerender-revalidate",
-        "x-prerender-revalidate-if-generated",
-        "x-next-revalidated-tags",
-        "x-next-revalidate-tag-token"
-      ]
-    },
     "/": {
       "experimentalBypassFor": [
         {
@@ -48,13 +24,37 @@
         "x-next-revalidated-tags",
         "x-next-revalidate-tag-token"
       ]
+    },
+    "/contact": {
+      "experimentalBypassFor": [
+        {
+          "type": "header",
+          "key": "Next-Action"
+        },
+        {
+          "type": "header",
+          "key": "content-type",
+          "value": "multipart/form-data;.*"
+        }
+      ],
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/contact",
+      "dataRoute": "/contact.rsc",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
     }
   },
   "dynamicRoutes": {},
   "notFoundRoutes": [],
   "preview": {
-    "previewModeId": "b932b9506d4b3dcd6e0c752aacc9b120",
-    "previewModeSigningKey": "114a0aac337f61d32b97ccf7c306933309c5e4f1d4254b259975242db2b1ee75",
-    "previewModeEncryptionKey": "2598dcb0e59f2c3849fa47e1a066a0544c181303cb400900a0188b0b795782d4"
+    "previewModeId": "2713bb2a3fc35e6fdd94fed1eb30de01",
+    "previewModeSigningKey": "d05c2b4ee6ed2ad3bbbe2aa058fde177f86c82ca46ecdc2018358a0837d950fd",
+    "previewModeEncryptionKey": "6c3c36da51a0928c2d989cf682992cd73fac6e48cca7e514757eb355c2312732"
   }
 }

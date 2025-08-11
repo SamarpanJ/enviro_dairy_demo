@@ -403,18 +403,8 @@ export default function EnviroLanding() {
                   height={600}
                   className="rounded-3xl shadow-2xl transition-transform duration-500 hover:scale-110"
                 />
-                <div className="absolute -top-8 -left-8 bg-gradient-to-br from-white to-green-50 p-6 rounded-2xl shadow-2xl border border-green-100">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-green-600 mb-1">100%</div>
-                    <div className="text-sm text-gray-600 font-medium">Carbon Neutral</div>
-                  </div>
-                </div>
-                <div className="absolute -bottom-8 -right-8 bg-gradient-to-br from-green-600 to-green-700 p-6 rounded-2xl shadow-2xl">
-                  <div className="text-center text-white">
-                    <div className="text-3xl font-bold mb-1">50M+</div>
-                    <div className="text-sm opacity-90">Trees Planted</div>
-                  </div>
-                </div>
+
+
               </div>
             </div>
           </div>

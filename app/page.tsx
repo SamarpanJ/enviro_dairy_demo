@@ -1,5 +1,6 @@
 'use client'
 
+import { useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -12,15 +13,25 @@ import { TrustedBrands } from "@/components/trusted-brands"
 import { ScrollCounter } from "@/components/scroll-counter"
 import { ScrollToTop } from "@/components/scroll-to-top"
 import { EnviroNavbar } from "@/components/enviro-navbar"
-import { useScrollAnimation, useStaggeredAnimation } from "@/hooks/use-scroll-animation"
+import { useScrollAnimation, useStaggeredAnimation, useRevealOnIntersect, useMountAnimation, useStaggeredMountAnimation } from "@/hooks/use-scroll-animation"
 
 export default function EnviroLanding() {
+  // Hero section mount animations
+  const heroTextStagger = useStaggeredMountAnimation(4, 300, 150) // 4 elements: heading, description, buttons, response text
+  const heroImageAnimation = useMountAnimation(600) // Image appears after text with 600ms delay
+  
   const servicesAnimation = useScrollAnimation(0.2)
   const servicesStagger = useStaggeredAnimation(3, 0.1, 150)
-  const productsAnimation = useScrollAnimation(0.2)
-  const productsStagger = useStaggeredAnimation(4, 0.1, 200)
+  // Products section: lightweight on-scroll reveal via IO-triggered CSS transitions (no JS-driven animation frames)
+  const productsHeaderReveal = useRevealOnIntersect(0.1, '150px')
+
   const sustainabilityAnimation = useScrollAnimation(0.2)
   const statsAnimation = useScrollAnimation(0.3)
+
+  // Scroll to top on page refresh/mount
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   
   return (
     <div className="flex flex-col min-h-screen bg-white overflow-x-hidden">
@@ -72,15 +83,27 @@ export default function EnviroLanding() {
           <div className="container relative z-10">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
               <div>
-                <h1 className="text-display-2 sm:text-display-1 text-display text-black">
+                <h1 className={`text-display-2 sm:text-display-1 text-display text-black transition-all duration-700 ease-out transform ${
+                  heroTextStagger.visibleItems.includes(0) 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-8'
+                }`}>
                   <span className="bg-gradient-to-r from-green-600 to-green-700 bg-clip-text text-transparent">Premium</span>{' '}
                   Dairy Exports
                 </h1>
-                <p className="mt-6 text-body-xl text-body text-gray-600 max-w-[640px]">
+                <p className={`mt-6 text-body-xl text-body text-gray-600 max-w-[640px] transition-all duration-700 ease-out transform ${
+                  heroTextStagger.visibleItems.includes(1) 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-8'
+                }`}>
                   Delivered worldwide with certified quality and carbon‑neutral logistics. Partner with a
                   team trusted by importers across 75+ countries.
                 </p>
-                <div className="mt-8 flex flex-col sm:flex-row gap-4">
+                <div className={`mt-8 flex flex-col sm:flex-row gap-4 transition-all duration-700 ease-out transform ${
+                  heroTextStagger.visibleItems.includes(2) 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-8'
+                }`}>
                   <Button size="lg" asChild className="h-14 px-8 bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 transform group">
                     <Link href="/contact">
                       Request Proposal
@@ -93,9 +116,19 @@ export default function EnviroLanding() {
                     </Link>
                   </Button>
                 </div>
-                <div className="mt-6 text-body-sm text-body text-gray-500">Response within 24 hours</div>
+                <div className={`mt-6 text-body-sm text-body text-gray-500 transition-all duration-700 ease-out transform ${
+                  heroTextStagger.visibleItems.includes(3) 
+                    ? 'opacity-100 translate-y-0' 
+                    : 'opacity-0 translate-y-8'
+                }`}>
+                  Response within 24 hours
+                </div>
               </div>
-              <div className="relative overflow-hidden rounded-3xl">
+              <div className={`relative overflow-hidden rounded-3xl transition-all duration-800 ease-out transform ${
+                heroImageAnimation.isVisible 
+                  ? 'opacity-100 translate-x-0 scale-100' 
+                  : 'opacity-0 translate-x-8 scale-95'
+              }`}>
                 <Image
                   src="/premium-dairy-hero.png"
                   alt="Premium dairy products"
@@ -238,11 +271,9 @@ export default function EnviroLanding() {
           <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-gradient-to-tr from-emerald-100/15 to-green-200/10 rounded-full blur-3xl"></div>
           <div className="container px-4 md:px-6 relative z-10">
             <div 
-              ref={productsAnimation.ref}
-              className={`text-center space-y-6 mb-20 transition-all duration-700 ${
-                productsAnimation.isVisible 
-                  ? 'opacity-100 translate-y-0' 
-                  : 'opacity-0 translate-y-8'
+              ref={productsHeaderReveal.ref}
+              className={`text-center space-y-6 mb-20 transition-all duration-500 ease-out transform-gpu will-change-[transform,opacity] motion-reduce:transition-none motion-reduce:transform-none motion-reduce:opacity-100 ${
+                productsHeaderReveal.hasEntered ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
               }`}
             >
               <Badge className="bg-gradient-to-r from-green-100 to-green-200 text-green-800 border-0 px-4 py-2">
@@ -259,8 +290,7 @@ export default function EnviroLanding() {
               </p>
             </div>
             <div 
-              ref={productsStagger.ref}
-              className="grid gap-8 md:grid-cols-2 lg:grid-cols-4"
+              className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 [content-visibility:auto] [contain-intrinsic-size:1px_1000px]"
             >
               {[
                 { 
@@ -289,12 +319,8 @@ export default function EnviroLanding() {
                 }
               ].map((product, index) => (
                 <Card 
-                  key={index} 
-                  className={`h-full flex flex-col border-0 shadow-xl hover:shadow-2xl transition-all duration-500 group overflow-hidden ${
-                    productsStagger.visibleItems.includes(index)
-                      ? 'opacity-100 translate-y-0'
-                      : 'opacity-0 translate-y-8'
-                  }`}
+                  key={index}
+                  className="h-full flex flex-col border-0 group card-hover-lift hover:bg-gradient-to-br hover:from-white hover:to-green-50"
                 >
                   <CardContent className="p-0 flex flex-col h-full">
                     <div className="relative overflow-hidden">
@@ -303,7 +329,8 @@ export default function EnviroLanding() {
                         alt={product.name}
                         width={400}
                         height={300}
-                        className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                        loading="lazy"
+                        className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-300 transform-gpu will-change-transform"
                       />
                       <div className="absolute top-4 right-4">
                         <Badge className="bg-gradient-to-r from-green-600 to-green-700 text-white border-0">Premium</Badge>

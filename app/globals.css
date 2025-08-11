@@ -27,6 +27,18 @@
   }
 }
 
+@layer components {
+  /* Reusable hover lift for cards */
+  .card-hover-lift {
+    @apply bg-white rounded-xl border border-gray-100 shadow-xl transition-all duration-300 ease-out transform-gpu will-change-transform;
+  }
+
+  .card-hover-lift:hover {
+    /* ~6px lift with stronger shadow, similar to services */
+    @apply -translate-y-1.5 shadow-2xl;
+  }
+}
+
 @layer utilities {
   /* Premium utilities */
   .bg-grid {

@@ -6,6 +6,28 @@
   .text-balance {
     text-wrap: balance;
   }
+  
+  .text-pretty {
+    text-wrap: pretty;
+  }
+  
+  .text-optimize {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .text-display {
+    @apply text-optimize text-balance;
+  }
+  
+  .text-heading {
+    @apply text-optimize text-balance;
+  }
+  
+  .text-body {
+    @apply text-optimize text-pretty;
+  }
 }
 
 @layer base {

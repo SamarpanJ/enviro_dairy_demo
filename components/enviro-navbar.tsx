@@ -32,7 +32,7 @@ const EnviroNavItems = ({ pathname }: { pathname: string }) => {
             {isActive && (
               <div className="absolute inset-0 h-full w-full rounded-full bg-gradient-to-r from-green-50 to-green-100 border-2 border-green-600 shadow-sm" />
             )}
-            <span className={`relative z-20 font-medium transition-colors duration-300 ${isActive ? 'text-green-800 font-semibold' : 'text-black hover:text-green-700'}`}>
+            <span className={`relative z-20 text-body transition-colors duration-300 ${isActive ? 'text-green-800 font-semibold' : 'text-black hover:text-green-700'}`}>
               {item.name}
             </span>
           </a>
@@ -53,10 +53,10 @@ export const EnviroLogo = () => {
         <Leaf className="h-5 w-5 text-white" />
       </div>
       <div>
-        <span className="text-2xl font-bold text-black">
+        <span className="text-heading-2 text-heading text-black">
           Enviro
         </span>
-        <div className="text-xs text-gray-700 font-semibold tracking-wider">DAIRY EXPORTS</div>
+        <div className="text-caption text-body text-gray-700 font-medium tracking-wider">DAIRY EXPORTS</div>
       </div>
     </a>
   );
@@ -102,7 +102,7 @@ export function EnviroNavbar() {
               <a
                 key={idx}
                 href={item.link}
-                className={`block transition-colors duration-300 text-lg font-medium relative px-4 py-2 rounded-full ${
+                className={`block transition-colors duration-300 text-body-lg relative px-4 py-2 rounded-full ${
                   isActive 
                     ? 'text-green-800 bg-gradient-to-r from-green-50 to-green-100 border-2 border-green-600 font-semibold shadow-sm' 
                     : 'text-black hover:text-green-700 hover:bg-gray-50'

@@ -22,7 +22,7 @@ function BrandWordmark(props: { name: string; className?: string }) {
       className={cn(
         'min-w-[180px] h-14 px-7 grid place-items-center select-none group cursor-pointer',
         'text-slate-600 hover:text-emerald-700 transition-all duration-500 ease-out',
-        'font-semibold tracking-wide text-base',
+        'font-medium tracking-wide text-body',
         'bg-white/70 hover:bg-white/95 backdrop-blur-md',
         'rounded-2xl border border-slate-200/40 hover:border-emerald-200/60',
         'shadow-lg shadow-slate-200/20 hover:shadow-xl hover:shadow-emerald-200/25',
@@ -33,7 +33,7 @@ function BrandWordmark(props: { name: string; className?: string }) {
         props.className,
       )}
     >
-      <span className="group-hover:font-bold transition-all duration-300 relative z-10">
+      <span className="group-hover:font-semibold transition-all duration-300 relative z-10 text-body">
         {props.name}
       </span>
     </div>
@@ -42,7 +42,7 @@ function BrandWordmark(props: { name: string; className?: string }) {
 
 function MarqueeRow({ items }: { items: Brand[] }) {
   return (
-    <div className="relative mask-fade-x overflow-hidden">
+    <div className="relative overflow-hidden">
       <div className={cn('flex gap-8 w-max will-change-transform marquee')} style={{ animationDuration: '45s' }}>
         {items.map((b) => (
           <BrandWordmark key={`a-${b.name}`} name={b.name} />
@@ -62,12 +62,12 @@ export function TrustedBrands() {
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-emerald-50/80 to-teal-50/80 border border-emerald-200/30 shadow-sm backdrop-blur-sm mb-6">
             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse shadow-sm" />
-            <span className="text-sm font-semibold text-emerald-800 tracking-wide">Global Partnership</span>
+            <span className="text-body-sm font-medium text-emerald-800 tracking-wide">Global Partnership</span>
           </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4 tracking-tight">
+          <h2 className="text-heading-1 md:text-display-3 text-heading text-slate-900 mb-4">
             Trusted by Leading Global Brands
           </h2>
-          <p className="text-slate-600 text-lg max-w-xl mx-auto leading-relaxed">
+          <p className="text-body-lg text-body text-slate-600 max-w-xl mx-auto">
             Delivering excellence to dairy industry leaders worldwide through premium quality and innovation
           </p>
         </div>

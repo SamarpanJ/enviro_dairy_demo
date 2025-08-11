@@ -19,6 +19,28 @@ const config: Config = {
       },
     },
   	extend: {
+  		fontSize: {
+  			'display-1': ['4.5rem', { lineHeight: '1.05', letterSpacing: '-0.025em', fontWeight: '800' }],
+  			'display-2': ['3.75rem', { lineHeight: '1.1', letterSpacing: '-0.02em', fontWeight: '800' }],
+  			'display-3': ['3rem', { lineHeight: '1.15', letterSpacing: '-0.015em', fontWeight: '700' }],
+  			'heading-1': ['2.5rem', { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '700' }],
+  			'heading-2': ['2rem', { lineHeight: '1.25', letterSpacing: '-0.005em', fontWeight: '600' }],
+  			'heading-3': ['1.5rem', { lineHeight: '1.3', fontWeight: '600' }],
+  			'heading-4': ['1.25rem', { lineHeight: '1.35', fontWeight: '600' }],
+  			'body-xl': ['1.25rem', { lineHeight: '1.7', fontWeight: '400' }],
+  			'body-lg': ['1.125rem', { lineHeight: '1.65', fontWeight: '400' }],
+  			'body': ['1rem', { lineHeight: '1.6', fontWeight: '400' }],
+  			'body-sm': ['0.875rem', { lineHeight: '1.5', fontWeight: '400' }],
+  			'caption': ['0.75rem', { lineHeight: '1.4', fontWeight: '500' }],
+  		},
+  		fontWeight: {
+  			light: '300',
+  			normal: '400', 
+  			medium: '500',
+  			semibold: '600',
+  			bold: '700',
+  			extrabold: '800',
+  		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

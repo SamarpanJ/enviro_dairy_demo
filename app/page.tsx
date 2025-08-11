@@ -51,7 +51,7 @@ export default function EnviroLanding() {
               style={{animation: 'morph-float-4 18s ease-in-out infinite'}}
             ></div>
             <div 
-              className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-tl from-green-100/50 to-emerald-100/35 organic-blob-5" 
+              className="absolute bottom-10 right-10 w-80 h-80 bg-gradient-to-tl from-green-200/40 to-emerald-300/30 organic-blob-5" 
               style={{animation: 'morph-float-5 13s ease-in-out infinite'}}
             ></div>
             <div 
@@ -72,11 +72,11 @@ export default function EnviroLanding() {
           <div className="container relative z-10">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
               <div>
-                <h1 className="text-5xl sm:text-6xl md:text-7xl font-extrabold tracking-tight leading-[1.05] text-black">
+                <h1 className="text-display-2 sm:text-display-1 text-display text-black">
                   <span className="bg-gradient-to-r from-green-600 to-green-700 bg-clip-text text-transparent">Premium</span>{' '}
                   Dairy Exports
                 </h1>
-                <p className="mt-6 text-xl text-gray-600 max-w-[640px] leading-relaxed">
+                <p className="mt-6 text-body-xl text-body text-gray-600 max-w-[640px]">
                   Delivered worldwide with certified quality and carbon‑neutral logistics. Partner with a
                   team trusted by importers across 75+ countries.
                 </p>
@@ -93,7 +93,7 @@ export default function EnviroLanding() {
                     </Link>
                   </Button>
                 </div>
-                <div className="mt-6 text-sm text-gray-500">Response within 24 hours</div>
+                <div className="mt-6 text-body-sm text-body text-gray-500">Response within 24 hours</div>
               </div>
               <div className="relative overflow-hidden rounded-3xl">
                 <Image
@@ -118,22 +118,22 @@ export default function EnviroLanding() {
                 }`}
               >
                 <div className="flex-1 text-center px-8">
-                  <div className="text-4xl font-bold text-black">
+                  <div className="text-heading-1 text-black">
                     <ScrollCounter end={75} suffix="+" />
                   </div>
-                  <div className="text-sm text-gray-600 mt-2">Countries Served</div>
+                  <div className="text-body-sm text-body text-gray-600 mt-2">Countries Served</div>
                 </div>
                 <div className="flex-1 text-center px-8">
-                  <div className="text-4xl font-bold text-black">
+                  <div className="text-heading-1 text-black">
                     <ScrollCounter end={5000} suffix="+" />
                   </div>
-                  <div className="text-sm text-gray-600 mt-2">Monthly Shipments</div>
+                  <div className="text-body-sm text-body text-gray-600 mt-2">Monthly Shipments</div>
                 </div>
                 <div className="flex-1 text-center px-8">
-                  <div className="text-4xl font-bold text-black">
+                  <div className="text-heading-1 text-black">
                     <ScrollCounter end={99.8} decimals={1} suffix="%" />
                   </div>
-                  <div className="text-sm text-gray-600 mt-2">Quality Rating</div>
+                  <div className="text-body-sm text-body text-gray-600 mt-2">Quality Rating</div>
                 </div>
               </div>
             </div>
@@ -161,11 +161,11 @@ export default function EnviroLanding() {
                 <Target className="w-3 h-3 mr-1" />
                 Our Premium Services
               </Badge>
-              <h2 className="text-4xl font-bold tracking-tight text-black sm:text-5xl md:text-6xl">
+              <h2 className="text-heading-1 sm:text-display-3 text-heading text-black">
                 End-to-End Export
                 <span className="block bg-gradient-to-r from-green-600 to-green-700 bg-clip-text text-transparent">Solutions</span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-[900px] mx-auto leading-relaxed">
+              <p className="text-body-xl text-body text-gray-600 max-w-[900px] mx-auto">
                 From farm sourcing to global delivery, we orchestrate every aspect of dairy export 
                 with precision, innovation, and unwavering commitment to excellence.
               </p>
@@ -196,23 +196,27 @@ export default function EnviroLanding() {
               ].map((service, index) => (
                 <Card 
                   key={index} 
-                  className={`border-0 shadow-xl hover:shadow-2xl transition-all duration-500 group bg-white hover:bg-gradient-to-br hover:from-white hover:to-green-50 ${
+                  className={`h-full flex flex-col border-0 shadow-xl hover:shadow-2xl transition-all duration-500 group bg-white hover:bg-gradient-to-br hover:from-white hover:to-green-50 ${
                     servicesStagger.visibleItems.includes(index)
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-8'
                   }`}
                 >
-                  <CardContent className="p-10">
+                  <CardContent className="p-10 flex flex-col h-full">
                     <div className="h-16 w-16 bg-gradient-to-br from-green-100 to-green-200 rounded-2xl flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-300">
                       <service.icon className="h-8 w-8 text-green-600" />
                     </div>
-                    <h3 className="text-2xl font-bold text-black mb-4 group-hover:text-green-700 transition-colors">{service.title}</h3>
-                    <p className="text-gray-600 mb-6 leading-relaxed">{service.description}</p>
-                    <div className="space-y-3 mb-6">
+                    <div className="h-16 flex items-start mb-4">
+                      <h3 className="text-heading-2 text-heading text-black group-hover:text-green-700 transition-colors">{service.title}</h3>
+                    </div>
+                    <div className="h-24 mb-6">
+                      <p className="text-body text-body text-gray-600">{service.description}</p>
+                    </div>
+                    <div className="space-y-3 mb-6 flex-1">
                       {service.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center space-x-3">
                           <CheckCircle className="h-4 w-4 text-green-600" />
-                          <span className="text-sm text-gray-600">{feature}</span>
+                          <span className="text-body-sm text-body text-gray-600">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -245,11 +249,11 @@ export default function EnviroLanding() {
                 <BarChart3 className="w-3 h-3 mr-1" />
                 Premium Product Range
               </Badge>
-              <h2 className="text-4xl font-bold tracking-tight text-black sm:text-5xl md:text-6xl">
+              <h2 className="text-heading-1 sm:text-display-3 text-heading text-black">
                 Exceptional Dairy
                 <span className="block bg-gradient-to-r from-green-600 to-green-700 bg-clip-text text-transparent">Products</span>
               </h2>
-              <p className="text-xl text-gray-600 max-w-[900px] mx-auto leading-relaxed">
+              <p className="text-body-xl text-body text-gray-600 max-w-[900px] mx-auto">
                 Discover our comprehensive range of premium dairy products, each crafted with meticulous attention 
                 to quality and designed for global distribution.
               </p>
@@ -286,13 +290,13 @@ export default function EnviroLanding() {
               ].map((product, index) => (
                 <Card 
                   key={index} 
-                  className={`border-0 shadow-xl hover:shadow-2xl transition-all duration-500 group overflow-hidden ${
+                  className={`h-full flex flex-col border-0 shadow-xl hover:shadow-2xl transition-all duration-500 group overflow-hidden ${
                     productsStagger.visibleItems.includes(index)
                       ? 'opacity-100 translate-y-0'
                       : 'opacity-0 translate-y-8'
                   }`}
                 >
-                  <CardContent className="p-0">
+                  <CardContent className="p-0 flex flex-col h-full">
                     <div className="relative overflow-hidden">
                       <Image
                         src={product.imageSrc}
@@ -306,14 +310,18 @@ export default function EnviroLanding() {
                       </div>
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
-                    <div className="p-8">
-                      <h3 className="text-xl font-bold text-black mb-3 group-hover:text-green-700 transition-colors">{product.name}</h3>
-                      <p className="text-gray-600 mb-4 leading-relaxed">{product.desc}</p>
-                      <div className="space-y-2 mb-6">
+                    <div className="p-8 flex flex-col flex-1">
+                      <div className="h-14 flex items-start mb-3">
+                        <h3 className="text-heading-3 text-heading text-black group-hover:text-green-700 transition-colors">{product.name}</h3>
+                      </div>
+                      <div className="h-12 mb-4">
+                        <p className="text-body text-body text-gray-600">{product.desc}</p>
+                      </div>
+                      <div className="space-y-2 mb-6 flex-1">
                         {product.specs.map((spec, idx) => (
                           <div key={idx} className="flex items-center space-x-2">
                             <div className="h-1.5 w-1.5 bg-green-600 rounded-full"></div>
-                            <span className="text-sm text-gray-600">{spec}</span>
+                            <span className="text-body-sm text-body text-gray-600">{spec}</span>
                           </div>
                         ))}
                       </div>
@@ -349,11 +357,11 @@ export default function EnviroLanding() {
                     <Leaf className="w-3 h-3 mr-1" />
                     Sustainable Excellence
                   </Badge>
-                  <h2 className="text-4xl font-bold tracking-tight text-black sm:text-5xl">
+                  <h2 className="text-heading-1 sm:text-display-3 text-heading text-black">
                     Environmental
                     <span className="block bg-gradient-to-r from-green-600 to-green-700 bg-clip-text text-transparent">Responsibility</span>
                   </h2>
-                  <p className="text-lg text-gray-600 leading-relaxed">
+                  <p className="text-body-lg text-body text-gray-600">
                     Our commitment to sustainability drives innovation in every aspect of our operations, 
                     from carbon-neutral shipping to biodegradable packaging solutions that protect our planet 
                     while delivering exceptional quality.
@@ -371,8 +379,8 @@ export default function EnviroLanding() {
                         <item.icon className="h-6 w-6 text-green-600" />
                       </div>
                       <div>
-                        <h4 className="font-bold text-black mb-1">{item.title}</h4>
-                        <p className="text-sm text-gray-600">{item.desc}</p>
+                        <h4 className="text-heading-4 text-heading text-black mb-1">{item.title}</h4>
+                        <p className="text-body-sm text-body text-gray-600">{item.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -391,7 +399,7 @@ export default function EnviroLanding() {
                         <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
                       ))}
                     </div>
-                    <p className="text-sm text-gray-600 font-medium">Certified by 500+ sustainability partners</p>
+                    <p className="text-body-sm text-body text-gray-600 font-medium">Certified by 500+ sustainability partners</p>
                   </div>
                 </div>
               </div>
@@ -418,8 +426,8 @@ export default function EnviroLanding() {
           <div className="container relative z-10">
             <div className="text-center space-y-4 mb-10">
               <Badge className="bg-green-100 text-green-800 border-0">Client Testimonials</Badge>
-              <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black">What partners say about us</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">Real feedback from importers and distributors across the globe.</p>
+              <h2 className="text-heading-1 md:text-display-3 text-heading text-black">What partners say about us</h2>
+              <p className="text-body text-body text-gray-600 max-w-2xl mx-auto">Real feedback from importers and distributors across the globe.</p>
             </div>
 
             {/* Row 1 */}
@@ -434,11 +442,11 @@ export default function EnviroLanding() {
                             GM
                           </div>
                           <div>
-                            <div className="font-semibold text-black">Senior Buyer, GlobalMart</div>
-                            <div className="text-xs text-gray-500">Dubai, UAE</div>
+                            <div className="text-heading-4 text-heading text-black">Senior Buyer, GlobalMart</div>
+                            <div className="text-caption text-body text-gray-500">Dubai, UAE</div>
                           </div>
                         </div>
-                        <p className="text-gray-600">"On‑time deliveries and flawless quality. Enviro is our most reliable dairy partner."</p>
+                        <p className="text-body text-body text-gray-600">"On‑time deliveries and flawless quality. Enviro is our most reliable dairy partner."</p>
                       </CardContent>
                     </Card>
                   ))}
@@ -452,11 +460,11 @@ export default function EnviroLanding() {
                             GM
                           </div>
                           <div>
-                            <div className="font-semibold text-black">Senior Buyer, GlobalMart</div>
-                            <div className="text-xs text-gray-500">Dubai, UAE</div>
+                            <div className="text-heading-4 text-heading text-black">Senior Buyer, GlobalMart</div>
+                            <div className="text-caption text-body text-gray-500">Dubai, UAE</div>
                           </div>
                         </div>
-                        <p className="text-gray-600">"On‑time deliveries and flawless quality. Enviro is our most reliable dairy partner."</p>
+                        <p className="text-body text-body text-gray-600">"On‑time deliveries and flawless quality. Enviro is our most reliable dairy partner."</p>
                       </CardContent>
                     </Card>
                   ))}
@@ -476,11 +484,11 @@ export default function EnviroLanding() {
                             OT
                           </div>
                           <div>
-                            <div className="font-semibold text-black">Procurement Lead, OceanTrade</div>
-                            <div className="text-xs text-gray-500">Singapore</div>
+                            <div className="text-heading-4 text-heading text-black">Procurement Lead, OceanTrade</div>
+                            <div className="text-caption text-body text-gray-500">Singapore</div>
                           </div>
                         </div>
-                        <p className="text-gray-600">"Exceptional documentation and certifications. Compliance is always seamless."</p>
+                        <p className="text-body text-body text-gray-600">"Exceptional documentation and certifications. Compliance is always seamless."</p>
                       </CardContent>
                     </Card>
                   ))}
@@ -494,11 +502,11 @@ export default function EnviroLanding() {
                             OT
                           </div>
                           <div>
-                            <div className="font-semibold text-black">Procurement Lead, OceanTrade</div>
-                            <div className="text-xs text-gray-500">Singapore</div>
+                            <div className="text-heading-4 text-heading text-black">Procurement Lead, OceanTrade</div>
+                            <div className="text-caption text-body text-gray-500">Singapore</div>
                           </div>
                         </div>
-                        <p className="text-gray-600">"Exceptional documentation and certifications. Compliance is always seamless."</p>
+                        <p className="text-body text-body text-gray-600">"Exceptional documentation and certifications. Compliance is always seamless."</p>
                       </CardContent>
                     </Card>
                   ))}
@@ -528,7 +536,7 @@ export default function EnviroLanding() {
                   <div className="text-xs text-green-400 font-medium tracking-wider">DAIRY EXPORTS</div>
                 </div>
               </div>
-              <p className="text-gray-300 leading-relaxed text-sm">
+              <p className="text-body-sm text-body text-gray-300">
                 Premium dairy exports connecting sustainable farms to global markets with 
                 uncompromising quality and environmental responsibility since 1995.
               </p>
@@ -562,7 +570,7 @@ export default function EnviroLanding() {
             <div className="flex flex-col sm:flex-row gap-8 lg:gap-12">
               {/* Quick Links */}
               <div className="space-y-3">
-                <h4 className="text-base font-semibold text-white">Quick Links</h4>
+                <h4 className="text-heading-4 text-heading text-white">Quick Links</h4>
                 <ul className="space-y-1.5 text-gray-300">
                   <li><Link href="/" className="hover:text-green-400 transition-colors duration-300 text-sm flex items-center group">
                     <span className="w-1 h-1 bg-green-400 rounded-full mr-2 opacity-0 group-hover:opacity-100 transition-opacity"></span>
@@ -589,19 +597,19 @@ export default function EnviroLanding() {
 
               {/* Contact Info */}
               <div className="space-y-3">
-                <h4 className="text-base font-semibold text-white">Contact</h4>
+                <h4 className="text-heading-4 text-heading text-white">Contact</h4>
                 <div className="space-y-2 text-gray-300">
                   <div className="flex items-center space-x-2.5 group">
                     <div className="h-3 w-3 bg-green-400 rounded-full flex-shrink-0 group-hover:scale-110 transition-transform"></div>
-                    <span className="text-sm">export@enviro-dairy.com</span>
+                    <span className="text-body-sm text-body">export@enviro-dairy.com</span>
                   </div>
                   <div className="flex items-center space-x-2.5 group">
                     <div className="h-3 w-3 bg-green-400 rounded-full flex-shrink-0 group-hover:scale-110 transition-transform"></div>
-                    <span className="text-sm">+1 (555) 123-4567</span>
+                    <span className="text-body-sm text-body">+1 (555) 123-4567</span>
                   </div>
                   <div className="flex items-center space-x-2.5 group">
                     <div className="h-3 w-3 bg-green-400 rounded-full flex-shrink-0 group-hover:scale-110 transition-transform"></div>
-                    <span className="text-sm">New York, USA</span>
+                    <span className="text-body-sm text-body">New York, USA</span>
                   </div>
                 </div>
               </div>
@@ -611,8 +619,8 @@ export default function EnviroLanding() {
           <Separator className="my-6 bg-gray-700" />
           
           <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
-            <p className="text-gray-400 text-xs">&copy; {new Date().getFullYear()} Enviro Dairy Exports. All rights reserved.</p>
-            <div className="flex space-x-4 text-xs text-gray-400">
+            <p className="text-caption text-body text-gray-400">&copy; {new Date().getFullYear()} Enviro Dairy Exports. All rights reserved.</p>
+            <div className="flex space-x-4 text-caption text-body text-gray-400">
               <Link href="#" className="hover:text-green-400 transition-colors">Privacy Policy</Link>
               <Link href="#" className="hover:text-green-400 transition-colors">Terms of Service</Link>
               <Link href="#" className="hover:text-green-400 transition-colors">Cookie Policy</Link>
